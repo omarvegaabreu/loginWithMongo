@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Inventory Management</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <!-- Material Design Bootstrap -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/css/mdb.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="css/index.css"
+      media="screen"
+      title="no title"
+    />
+    <script src="https://code.jquery.com/jquery.js"></script>
+  </head>
+  <body>
+    <header class="text-center mb-2 purple lighten-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 pt-2 ">
+            <img
+              class="py-2"
+              src="assets/image/warehouseconnect-logo1.png"
+              width="400"
+              height="auto"
+            />
+            <h2 class="text-center" id="title">
+              Inventory Management Solutions
+            </h2>
+            <h6 id="lead">POWERED BY ULTIMATE SOFTWARE SOLUTIONS</h6>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container mt-4 mb-5">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <!-- Default form login -->
+          <div class="card">
+            <h5
+              class="card-header font-weight-bold default-color white-text text-center py-3"
+            >
+              User Login
+            </h5>
+            <!--Card content-->
+            <div class="card-body p-0">
+              <form class="text-center border border-light px-5 pt-5 pb-3">
+                <!-- User name -->
+                <input
+                  type="text"
+                  id="username-input"
+                  class="form-control mb-4"
+                  placeholder="Username"
+                />
+
+                <!-- Password -->
+                <input
+                  type="password"
+                  id="password-input"
+                  class="form-control mb-4"
+                  placeholder="Password"
+                />
+
+                <div class="d-flex justify-content-around">
+                  <div>
+                    <!-- Remember me -->
+                    <div class="custom-control custom-checkbox">
+                      <input
+                        type="checkbox"
+                        class="custom-control-input"
+                        id="defaultLoginFormRemember"
+                      />
+                      <label
+                        class="custom-control-label"
+                        for="defaultLoginFormRemember"
+                        >Remember me</label
+                      >
+                    </div>
+                  </div>
+                  <div>
+                    <!-- Forgot password -->
+                    <a href="">Forgot password?</a>
+                  </div>
+                </div>
+
+                <!-- Sign in button -->
+                <button
+                  class="btn default-color-dark text-white btn-block my-4"
+                  type="submit"
+                  id="loginBtn"
+                >
+                  Log Me In
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <p id="loginError" class="d-none"></p>
+        </div>
+      </div>
+    </div>
+    <!-- Using Bootstrap, make a sticky footer -->
+    <footer>
+      <div
+        class="footer fixed-bottom navbar-expand-lg bg-dark text-white text-center"
+      >
+        <p class="navbar-text my-2 my-lg-0">
+          Copyright &copy Ultimate Software Solutions Inc. 2019
+        </p>
+      </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
+  </body>
+</html>
