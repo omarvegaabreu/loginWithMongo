@@ -5,7 +5,7 @@ const router = express.Router();
 const bcrypt = require("bcryptjs");
 
 //models
-const user = require("../models/User");
+const User = require("../models/User");
 
 //Login page
 router.get("/login", (req, res) => res.render("login"));
@@ -20,17 +20,16 @@ router.post("/register", (req, res) => {
 
   //Checking name email password and password2 fields are filled in
   if (!name || !email || !password || !password2) {
-    errors.push({ msg: "All fields are requiered to register." });
+    errors.push({ msg: "Please enter all fields" });
   }
   //Check if password match
-  if (password !== password2) {
-    errors.push({ msg: "Your passwords do not match." });
+  if (password != password2) {
+    errors.push({ msg: "Passwords do not match" });
   }
   //Password must be at least 6 characters long
   if (password.length < 6) {
-    errors.push({ msg: "Password length should be at least 6 characters" });
+    errors.push({ msg: "Password must be at least 6 characters" });
   }
-
   if (errors.length > 0) {
     res.render("register", {
       errors,
@@ -40,11 +39,9 @@ router.post("/register", (req, res) => {
       password2
     });
   } else {
-    //If validation passed
-    user.findOne({ email: email }).then(user => {
+    User.findOne({ email: email }).then(user => {
       if (user) {
-        //existing user response
-        errors.push({ msg: "Email already in use" });
+        errors.push({ msg: "Email already exists" });
         res.render("register", {
           errors,
           name,
@@ -53,7 +50,7 @@ router.post("/register", (req, res) => {
           password2
         });
       } else {
-        const newUser = new user({
+        const newUser = new User({
           name,
           email,
           password
