@@ -23,6 +23,9 @@ mongoose
 app.use(expressLayouts);
 app.set("view engine", "ejs");
 
+//route to public file
+app.use("/assets", express.static("assets"));
+
 //Bodyparser
 app.use(express.urlencoded({ extended: false }));
 
