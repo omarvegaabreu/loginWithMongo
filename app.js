@@ -3,8 +3,12 @@ const expressLayouts = require("express-ejs-layouts");
 const mongoose = require("mongoose");
 const flash = require("connect-flash");
 const session = require("express-session");
+const passport = require("passport");
 
 const app = express();
+
+//passport config
+require("./config/passport")(passport);
 
 //DB config
 const db = require("./config/keys").MongoURI;
@@ -19,10 +23,13 @@ mongoose
 app.use(expressLayouts);
 app.set("view engine", "ejs");
 
+//route to public file
+app.use("/assets", express.static("assets"));
+
 //Bodyparser
 app.use(express.urlencoded({ extended: false }));
 
-//Express session
+//Express sessions
 app.use(
   session({
     secret: "secret",
@@ -31,14 +38,18 @@ app.use(
   })
 );
 
-//Flash
+//passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+//flash messages
 app.use(flash());
 
-//global variables
-
+//global variables for flash
 app.use((req, res, next) => {
   res.locals.success_msg = req.flash("sucess_msg");
-  res.locals.error_msg = req.flash("sucess_msg");
+  res.locals.error_msg = req.flash("error_msg");
+  res.locals.error = req.flash("error");
   next();
 });
 
