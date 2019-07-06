@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const flash = require("connect-flash");
 const session = require("express-session");
 const passport = require("passport");
+const path = require("path");
 
 const app = express();
 
@@ -23,8 +24,8 @@ mongoose
 app.use(expressLayouts);
 app.set("view engine", "ejs");
 
-//route to public file
-app.use("/assets", express.static("assets"));
+//Route to public folder
+app.use(express.static(path.join(__dirname, "public")));
 
 //Bodyparser
 app.use(express.urlencoded({ extended: false }));
