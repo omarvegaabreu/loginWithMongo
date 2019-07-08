@@ -6,3 +6,10 @@ body {
   -o-background-size: cover;
   background-size: cover;
 }
+
+.card {
+  background-color: rgb(93, 136, 187);
+  background: url(../images/login_bg.jpg) no-repeat center center fixed;
+  border-collapse: inset;
+  border-width: 2ex 1.25ex 0.5ex;
+}
