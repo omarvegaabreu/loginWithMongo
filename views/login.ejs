@@ -1,11 +1,15 @@
 
-<div class="row mt-5">
-  <div class="col-md-6 m-auto">
-    <div class="card card-body">
-      <h1 class="text-center mb-3"><i class="fas fa-sign-in-alt"></i>  Login</h1>
+<div class="container mt-4 mb-5">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <!-- Default form login -->
+      <div class="card">
+          <h5 class="card-header font-weight-bold default-color white-text text-center py-3">
+              User Login
+          </h5>
       <% include ./partials/messages %>
-      <form action="/users/login" method="POST">
-        <div class="form-group">
+      <form class = "text-center border border-light px-5 pt-5 pb-3" action="/users/login" method="POST">
+        <div class="card-body p-0">
           <label for="email">Email</label>
           <input
             type="email"
